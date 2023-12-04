@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -160,25 +160,13 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="HTML_Project_5_1127" path="/HTML_Project_5_1127" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_5_1127">
-         <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
-      </Context>
-      
-      <Context docBase="HTML_Project_6" path="/HTML_Project_6" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_6">
-      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
-      </Context>
-      <Context docBase="HTML_Project_7" path="/HTML_Project_7" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_7"/>
-      <Context docBase="HTML_Project_8" path="/HTML_Project_8" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_8">
-      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
-      </Context>
-      <Context docBase="HTML_CSSProject_1" path="/HTML_CSSProject_1" reloadable="true" source="org.eclipse.jst.jee.server:HTML_CSSProject_1"/>
       <Context docBase="HTML_Project_sm" path="/HTML_Project_sm" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_sm">
-      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
+      <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
       </Context>
-      <Context docBase="HTML_Project_9" path="/HTML_Project_9" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_9">
-      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
+      <Context docBase="HTML_Project_8" path="/HTML_Project_8" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_8">
+      <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="10" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="hr"/>
       </Context>
-      <Context docBase="HTML_CSSProject_3" path="/HTML_CSSProject_3" reloadable="true" source="org.eclipse.jst.jee.server:HTML_CSSProject_3"/></Host>
+      <Context docBase="HTML_Project_9" path="/HTML_Project_9" reloadable="true" source="org.eclipse.jst.jee.server:HTML_Project_9"/></Host>
     </Engine>
   </Service>
 </Server>

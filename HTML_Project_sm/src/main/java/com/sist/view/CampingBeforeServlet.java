@@ -13,8 +13,8 @@ public class CampingBeforeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String Mno=request.getParameter("Mno");
-		Cookie cookie=new Cookie("camping_"+Mno,Mno);
+		String mno=request.getParameter("mno");
+		Cookie cookie=new Cookie("camping_"+mno,mno);
 		//							키		  값 => map
 		
 		// 저장 위치
@@ -28,7 +28,7 @@ public class CampingBeforeServlet extends HttpServlet {
 		response.addCookie(cookie);
 		
 		// 상세보기로 이동해라
-		response.sendRedirect("CampingDetailServlet?mno="+Mno);
+		response.sendRedirect("CampingDetailServlet?mno="+mno);
 	}
 
 }

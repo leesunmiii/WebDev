@@ -39,7 +39,7 @@ public class CampingDAO {
 			DataSource ds=(DataSource)c.lookup("jdbc/oracle");
 			conn=ds.getConnection();
 			
-		}catch(Exception ex) {}
+		}catch(Exception ex) {ex.printStackTrace();}
 	}
 	//	반환
 	public void disConnection()
@@ -74,7 +74,7 @@ public class CampingDAO {
 					+"FROM GoCamping)) "
 					+"WHERE numbb BETWEEN ? AND ?";
 			ps=conn.prepareStatement(sql); // 오라클로 전송
-			int rowSize=20; // 1page=> 1~12, 13~24
+			int rowSize=12; // 한페이지에 출력할 사진 갯수 // 1page=> 1~12, 13~24 
 			int start=(rowSize*page)-(rowSize-1);
 			int end=rowSize*page;
 			ps.setInt(1, start);
@@ -90,10 +90,6 @@ public class CampingDAO {
 				vo.setPoster(rs.getString(4));
 				vo.setLoc(rs.getString(5));
 				vo.setNum(rs.getString(6));
-
-//				String poster=rs.getString(3);
-//				poster=poster.substring(0,poster.indexOf("^"));
-//				vo.setPoster(poster);
 				list.add(vo);
 			}
 			rs.close();
@@ -154,7 +150,7 @@ public class CampingDAO {
 			ps.executeUpdate(); // commit을 포함 => INSERT/UPDATE
 			// SELECT => 실행된 결과를 읽어온다 => executeQuery
 			// 실제 데이터를 가지고 온다
-			sql="SELECT mno,title,subtitle,poster,loc,num,envir,category,season,openclose,homepage,reserve,facility,pic1,pic2,pic3,expalin "
+			sql="SELECT mno,title,subtitle,poster,loc,num,envir,category,season,openclose,homepage,reserve,facility,pic1,pic2,pic3,explain "
 					+"FROM GoCamping "
 					+"WHERE mno="+mno;
 			ps=conn.prepareStatement(sql);
