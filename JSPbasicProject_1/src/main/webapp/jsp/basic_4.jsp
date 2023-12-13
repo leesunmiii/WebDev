@@ -72,6 +72,10 @@
 				<td class="text-center"><%=vo.getHiredate().toString() %></td>
 				<td class="text-center"><%=vo.getSal() %></td>
 			</tr>
+		<% 
+			}
+		%>	
+			
 	</table>
 	</div>
 	</div>

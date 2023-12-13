@@ -42,7 +42,7 @@
  <table border=1 width=700>
  	<tr>
  	<%
- 	for(int=i-2;i<=9;i++)
+ 	for(int i=2;i<=9;i++)
  	{
  	%>
  	<th><%= i+"´Ü" %></th>
